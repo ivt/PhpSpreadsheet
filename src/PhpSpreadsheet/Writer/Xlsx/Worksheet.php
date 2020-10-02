@@ -1103,7 +1103,7 @@ class Worksheet extends WriterPart
                     break;
                 case 'f':            // Formula
                     $attributes = $pCell->getFormulaAttributes();
-                    if ($attributes['t'] == 'array') {
+                    if ($attributes && $attributes['t'] == 'array') {
                         $objWriter->startElement('f');
                         $objWriter->writeAttribute('t', 'array');
                         $objWriter->writeAttribute('ref', $pCellAddress);
